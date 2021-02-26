@@ -1,10 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<html style="box-sizing: border-box;font-family: sans-serif;line-height: 1.15;-webkit-text-size-adjust: 100%;-webkit-tap-highlight-color: transparent;">
+
+<head style="box-sizing: border-box;">
+    <!-- Required meta tags -->
+    <meta charset="utf-8" style="box-sizing: border-box;">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" style="box-sizing: border-box;">
+    <meta name="description" content="Form" style="box-sizing: border-box;">
+    <meta name="keywords" content="HTML, CSS, JavaScript" style="box-sizing: border-box;">
+    <meta name="author" content="Andrea Benà" style="box-sizing: border-box;">
+
+    <base target="_top" style="box-sizing: border-box;">
+
+    <title style="box-sizing: border-box;">GAS-Form</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" style="box-sizing: border-box;">
+
 </head>
-<body>
+
+<body style="box-sizing: border-box;margin: 0;font-family: -apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Roboto,&quot;Helvetica Neue&quot;,Arial,&quot;Noto Sans&quot;,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;,&quot;Segoe UI Symbol&quot;,&quot;Noto Color Emoji&quot;;font-size: 1rem;font-weight: 400;line-height: 1.5;color: #212529;text-align: left;background-color: #203e74;min-width: 992px!important;">
+
+<div class="container" style="box-sizing: border-box;width: 100%;padding-right: 15px;padding-left: 15px;margin-right: auto;margin-left: auto;min-width: 992px!important;">
+    <div class="row justify-content-center pt-4" style="box-sizing: border-box;display: flex;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-right: -15px;margin-left: -15px;-ms-flex-pack: center!important;justify-content: center!important;padding-top: 1.5rem!important;">
+        <a href="&lt;?=linkPersonalPage?&gt;" target="_blank" style="box-sizing: border-box;color: #007bff;text-decoration: underline;background-color: transparent;"><img class="col-10 offset-md-1" id="logo_main_page" src="" alt="logo_main_page" border="0" style="box-sizing: border-box;vertical-align: middle;border-style: none;page-break-inside: avoid;position: relative;width: 100%;padding-right: 15px;padding-left: 15px;-ms-flex: 0 0 83.333333%;flex: 0 0 83.333333%;max-width: 83.333333%;margin-left: 8.333333%;"></a>
+    </div>
+</div>
+
+
+<div class="container" style="box-sizing: border-box;width: 100%;padding-right: 15px;padding-left: 15px;margin-right: auto;margin-left: auto;min-width: 992px!important;">
+    <!-- Content here -->
+    <div class="container-fluid py-3 text-center" style="box-sizing: border-box;width: 100%;padding-right: 15px;padding-left: 15px;margin-right: auto;margin-left: auto;padding-top: 1rem!important;padding-bottom: 1rem!important;text-align: center!important;">
+        <h1 class="text-light font-weight-bold text-center display-3" style="box-sizing: border-box;margin-top: 0;margin-bottom: .5rem;font-weight: 700!important;line-height: 1.2;font-size: 4.5rem;text-align: center!important;color: #f8f9fa!important;">Digital Edition <?= eventYear ?>
+        </h1>
+        <h3 class="text-light font-weight-bold text-center" style="box-sizing: border-box;margin-top: 0;margin-bottom: .5rem;font-weight: 700!important;line-height: 1.2;font-size: 1.75rem;orphans: 3;widows: 3;page-break-after: avoid;text-align: center!important;color: #f8f9fa!important;">Form for the collection of contents to be included in
+            the section dedicated
+            to the company on the page of our official website <?= eventYear ?>.</h3>
+        <p class="text-light pt-1" style="box-sizing: border-box;margin-top: 0;margin-bottom: 1rem;orphans: 3;widows: 3;padding-top: .25rem!important;color: #f8f9fa!important;">First of all we want to thank you for your participation in <i style="box-sizing: border-box;">your_event</i>
+            (<?= eventDate ?>). <br style="box-sizing: border-box;">
+            We ask you to fill in the form for the collection of contents that we are going to insert in the section dedicated to you.
+            <br style="box-sizing: border-box;">
+            You can view the result (after our publication) by visiting <a target="_blank" href="http://www.youtube.com/" style="box-sizing: border-box;color: #007bff;text-decoration: underline;background-color: transparent;">
+                your_personal_page </a>.</p>
+    </div>
+
+
+    <div class="row" style="box-sizing: border-box;display: flex;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-right: -15px;margin-left: -15px;">
+        <div class="col-md-8 offset-md-2" style="box-sizing: border-box;position: relative;width: 100%;padding-right: 15px;padding-left: 15px;-ms-flex: 0 0 66.666667%;flex: 0 0 66.666667%;max-width: 66.666667%;margin-left: 16.666667%;">
+            <form id="form" action="&lt;?=urlScript?&gt;" method="post" target="_top" onsubmit="return getFiles()" style="box-sizing: border-box;">
+
+                <div class="form-row" style="box-sizing: border-box;display: flex;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-right: -5px;margin-left: -5px;">
+
+                    <!-- First Name -->
+                    <div class="form-group col-md-6" style="box-sizing: border-box;position: relative;width: 100%;padding-right: 15px;padding-left: 15px;-ms-flex: 0 0 50%;flex: 0 0 50%;max-width: 50%;margin-bottom: 1rem;">
+                        <label class="text-light font-weight-bold" for="fName" style="box-sizing: border-box;display: inline-block;margin-bottom: .5rem;font-weight: 700!important;color: #f8f9fa!important;"><?=fName?></label><span class="text-danger" style="box-sizing: border-box;color: #dc3545!important;"> * </span>
+                        <input type="text" value="<?= fName ?>" class="form-control" id="fName" name="fName" required style="box-sizing: border-box;margin: 0;font-family: inherit;font-size: 1rem;line-height: 1.5;overflow: visible;display: block;width: 100%;height: calc(1.5em + .75rem + 2px);padding: .375rem .75rem;font-weight: 400;color: #495057;background-color: #fff;background-clip: padding-box;border: 1px solid #ced4da;border-radius: .25rem;transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;">
+                    </div>
+
+                    <!-- Last Name -->
+                    <div class="form-group col-md-6" style="box-sizing: border-box;position: relative;width: 100%;padding-right: 15px;padding-left: 15px;-ms-flex: 0 0 50%;flex: 0 0 50%;max-width: 50%;margin-bottom: 1rem;">
+                        <label class="text-light font-weight-bold" for="lName" style="box-sizing: border-box;display: inline-block;margin-bottom: .5rem;font-weight: 700!important;color: #f8f9fa!important;">Last Name</label><span class="text-danger" style="box-sizing: border-box;color: #dc3545!important;"> * </span>
+                        <input type="text" value="<?= lName ?>" class="form-control" id="lName" name="lName" required style="box-sizing: border-box;margin: 0;font-family: inherit;font-size: 1rem;line-height: 1.5;overflow: visible;display: block;width: 100%;height: calc(1.5em + .75rem + 2px);padding: .375rem .75rem;font-weight: 400;color: #495057;background-color: #fff;background-clip: padding-box;border: 1px solid #ced4da;border-radius: .25rem;transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;">
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="form-row justify-content-center" style="box-sizing: border-box;display: flex;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-right: -5px;margin-left: -5px;-ms-flex-pack: center!important;justify-content: center!important;">
+                    <div class="form-group col-md-6" style="box-sizing: border-box;position: relative;width: 100%;padding-right: 15px;padding-left: 15px;-ms-flex: 0 0 50%;flex: 0 0 50%;max-width: 50%;margin-bottom: 1rem;">
+                        <label class="text-light font-weight-bold" for="email" style="box-sizing: border-box;display: inline-block;margin-bottom: .5rem;font-weight: 700!important;color: #f8f9fa!important;">Email</label><span class="text-danger" style="box-sizing: border-box;color: #dc3545!important;"> * </span>
+                        <input type="email" value="<?= email ?>" class="form-control" id="email" name="email" autocomplete="on" required style="box-sizing: border-box;margin: 0;font-family: inherit;font-size: 1rem;line-height: 1.5;overflow: visible;display: block;width: 100%;height: calc(1.5em + .75rem + 2px);padding: .375rem .75rem;font-weight: 400;color: #495057;background-color: #fff;background-clip: padding-box;border: 1px solid #ced4da;border-radius: .25rem;transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;">
+                        <small id="emailHelp" class="form-text text-muted text-center" style="box-sizing: border-box;font-size: 80%;font-weight: 400;display: block;margin-top: .25rem;text-align: center!important;color: #6c757d!important;">We will not share your email with anyone else.</small>
+                    </div>
+                </div>
+
+                <h6 class="text-warning text-center" style="box-sizing: border-box;margin-top: 0;margin-bottom: .5rem;font-weight: 500;line-height: 1.2;font-size: 1rem;text-align: center!important;color: #ffc107!important;">Check that your email is correct otherwise you will not
+                    receive the automatic confirmation email.</h6>
+
+                <div class="py-1" style="box-sizing: border-box;padding-top: .25rem!important;padding-bottom: .25rem!important;"> </div>
+                <hr style="height: 4px;background-color: white;border-radius: 2px;border: none;box-sizing: content-box;overflow: visible;margin-top: 1rem;margin-bottom: 1rem;border-top: 1px solid rgba(0,0,0,.1);">
+                <div class="py-2" style="box-sizing: border-box;padding-top: .5rem!important;padding-bottom: .5rem!important;"> </div>
+
+                <!-- Update file -->
+                <div class="mb-3" style="box-sizing: border-box;margin-bottom: 1rem!important;">
+                    <label class="form-label text-light font-weight-bold" for="formFile" style="box-sizing: border-box;display: inline-block;margin-bottom: .5rem;font-weight: 700!important;color: #f8f9fa!important;">Upload the file [max. 5MB]</label><span class="text-danger" style="box-sizing: border-box;color: #dc3545!important;"> * </span>
+                    <input class="form-control" value="<?= fileName ?>" disabled style="padding: 0.15rem .75rem !important;box-sizing: border-box;margin: 0;font-family: inherit;font-size: 1rem;line-height: 1.5;overflow: visible;display: block;width: 100%;height: calc(1.5em + .75rem + 2px);font-weight: 400;color: #495057;background-color: #fff;background-clip: padding-box;border: 1px solid #ced4da;border-radius: .25rem;transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;">
+                    <!-- I expect to upload only one file -->
+                </div>
+                <br style="box-sizing: border-box;">
+
+                <div id="progress" class="text-light font-weight-bold text-center" style="box-sizing: border-box;text-align: center!important;font-weight: 700!important;color: #f8f9fa!important;">
+                </div>
+
+                <!-- CheckBox -->
+                <div class="form-check" style="box-sizing: border-box;position: relative;display: block;padding-left: 1.25rem;">
+                    <input type="checkbox" class="form-check-input" id="checkbox" checked disabled style="box-sizing: border-box;margin: 0;font-family: inherit;font-size: inherit;line-height: inherit;overflow: visible;position: absolute;margin-top: .3rem;margin-left: -1.25rem;padding: 0;">
+                    <label class="form-check-label text-light" for="checkbox" style="box-sizing: border-box;display: inline-block;margin-bottom: 0;color: #f8f9fa!important;">
+                    </label><p style="color: #f8f9fa!important;font-size: 80%;display: inline;box-sizing: border-box;margin-top: 0;margin-bottom: 1rem;orphans: 3;widows: 3;">I have read and accept the <a target="_blank" href="http://www.google.com" style="box-sizing: border-box;color: #007bff;text-decoration: underline;background-color: transparent;"><span style="font-weight: 400;box-sizing: border-box;">privacy policy</span></a></p>
+
+                </div>
+
+                <!-- Recommendations -->
+                <br style="box-sizing: border-box;">
+                <h6 class="text-light text-center" style="box-sizing: border-box;margin-top: 0;margin-bottom: .5rem;font-weight: 500;line-height: 1.2;font-size: 1rem;text-align: center!important;color: #f8f9fa!important;">Before proceeding to
+                    submit,<b style="box-sizing: border-box;font-weight: bolder;"><i style="box-sizing: border-box;"> check that you have correctly filled in all the fields</i></b> of your
+                    interest.
+                    <br style="box-sizing: border-box;">Once submitted,
+                    <b style="box-sizing: border-box;font-weight: bolder;"><u style="box-sizing: border-box;">it will no longer be possible to modify the form</u></b>.
+                    <br style="box-sizing: border-box;">If you would like to make any changes, please contact us at our email
+                    <a href="mailto:foo@gmail.com" style="box-sizing: border-box;color: #007bff;text-decoration: underline;background-color: transparent;"><span style="font-weight: 400;box-sizing: border-box;">foo@gmail.com</span></a>.
+                </h6>
+                <br style="box-sizing: border-box;">
+                <br style="box-sizing: border-box;">
+
+                <input type="hidden" name="goTo" value="greetings" style="box-sizing: border-box;margin: 0;font-family: inherit;font-size: inherit;line-height: inherit;overflow: visible;">
+            </form>
+            <p class="text-light font-weight-bold" id="log" style="box-sizing: border-box;margin-top: 0;margin-bottom: 1rem;orphans: 3;widows: 3;font-weight: 700!important;color: #f8f9fa!important;"></p>
+        </div>
+    </div>
+</div>
+
+<?!= include("Form-page-js") ?>
 
 </body>
+
 </html>
