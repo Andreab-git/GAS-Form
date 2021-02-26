@@ -18,3 +18,17 @@ After filling in all the fields you can submit the form which, after obtaining c
 Behind the scenes the results of the form will be saved in a SpreadSheet while the uploaded file will be saved in a folder within the drive.<br>
 The files will be organised within it according to year and email address. <br>
 Once the data has been saved, an email will be sent to confirm receipt of the form. 
+
+## Getting started
+
+Before deploying, you must enter the values for these variables in Code.gs
+
+Values | Descriptions
+------------ | -------------
+URL_SCRIPT | Represents the url that is assigned by Google after deployment.
+LOGO_MAIN_PAGE | Your main logo ID stored in your Drive (remember to share it to everyone)
+LOGO_GREETINGS_PAGE | This is the logo ID stored in your Drive that appears when the form is submitted successfully
+URL_PERSONAL_PAGE | If you have a personal page, fill in the value with your URL
+SHEET_URL | This is the URL of the SpreadSheet which is located in your Drive and will collect the results of the form. 
+DRIVE_FOLDER_ID | This is the folder where the uploaded files will be stored
+EVENT_DATE | Enter the date of the event you are organising
