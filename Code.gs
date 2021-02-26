@@ -31,8 +31,6 @@ function doPost(e){
 
 function loadForm() {
 
-  var spreadsheet = SpreadsheetApp.openByUrl(SHEET_URL);
-  var ws = spreadsheet.getSheetByName(SHEET_TAB);
   var tmp = HtmlService.createTemplateFromFile('Form-page');
   tmp.logo = LOGO_MAIN_PAGE;
   tmp.urlScript = URL_SCRIPT;
@@ -70,3 +68,11 @@ function loadTemplateFormPage() {
 
   return tmp.evaluate();
 }
+
+
+
+
+
+
+
+
