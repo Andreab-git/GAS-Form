@@ -1,10 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<script>
 
-</body>
-</html>
+    var MAX_FILE_SIZE_IN_MB = 5;
+
+    // #########################
+    // #### UPLOAD TO DRIVE ####
+    // #########################
+
+    function getFiles() {
+        let submitBtn = document.getElementById("submitBtn");
+        let divSubBtn = document.getElementById("divSubBtn");
+        const progressText = document.getElementById("progress");
+        const f = document.getElementById('file');
+        var uploadCompletedCount = 0;
+
+        submitBtn.remove();
+        progressText.innerHTML = "Uploading file...";
+        divSubBtn.insertAdjacentHTML('afterbegin',`<button class="btn btn-primary btn-lg" type="button" disabled><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sto caricando il file...</button>`);
+
+        [...f.files].forEach((file, i) => {
+            const fr = new FileReader();
+            fr.onload = (e) => {
+                const data = e.target.result.split(",");
+                const obj = {fileName: f.files[i].name, mimeType: data[0].match(/:(\w.+);/)[1], data: data[1]};
+                google.script.run.withSuccessHandler((id) => {
+                    uploadCompletedCount++;
+                    if (uploadCompletedCount >= [...f.files].length){
+                        progressText.innerHTML = "Upload completed successfully!";
+                        console.log("Upload completed successfully!");
+                        setTimeout(logSubmit(id), 3000);
+                    }
+                }).saveFile(obj, document.getElementById('email').value.trim());
+            }
+            fr.readAsDataURL(file);
+        });
+
+        return false;
+    }
+
+
+    // #########################
+    // #### SUBMIT FUNCTION ####
+    // #########################
+
+    const log = document.getElementById('log');
+    const form = document.getElementById('form');
+
+    function logSubmit(savedFileID) {
+
+        var arrayValues = {};
+
+        var fName = document.getElementById('fName').value.trim();
+        var lName = document.getElementById('lName').value.trim();
+        var email = document.getElementById('email').value.trim();
+        var fileName = document.getElementById('file').value.trim();
+
+        arrayValues.fName = fName;
+        arrayValues.lName = lName;
+        arrayValues.email = email;
+        arrayValues.fileName = fileName;
+
+        google.script.run.userClicked(arrayValues, savedFileID);
+
+        form.submit();
+    }
+
+
+    // ############################
+    // #### FILE SIZE FUNCTION ####
+    // ############################
+
+    const input = document.getElementById('file');
+    input.addEventListener('change', (event) => {
+        const target = event.target
+        const mb = MAX_FILE_SIZE_IN_MB;
+        if (target.files && target.files[0]) {
+            /*Maximum allowed size in bytes
+            Change first operand(multiplier) for your needs*/
+            const maxAllowedSize = mb * 1024 * 1024;
+            if (target.files[0].size > maxAllowedSize) {
+                alert("Il file supera la dimensione massima di " + mb + " Mb");
+                // Here you can ask your users to load correct file
+                target.value = ''
+            }
+        }
+    });
+
+</script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+</script>
