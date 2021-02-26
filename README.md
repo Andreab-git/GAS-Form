@@ -1,4 +1,4 @@
-# GAS-Form
+# GAS-Form - Google App Script Form
 
 Are you looking for a way to create a form that allows you to upload files to your drive? <br>
 Would you like your files to be organised to your liking? <br>
