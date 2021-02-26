@@ -19,7 +19,7 @@ function doGet(e) {
 }
 
 
-function doPost(e){
+function doPost(e) {
 
   if(e.parameter.goTo == "greetings")
     return loadGreetings(e);
