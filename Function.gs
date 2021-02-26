@@ -69,4 +69,3 @@ function userClicked(arrayValues, savedFileID) {
 
   createBlobToSend(arrayValues);
 }
-

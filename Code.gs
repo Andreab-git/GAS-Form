@@ -70,11 +70,3 @@ function loadTemplateFormPage() {
 
   return tmp.evaluate();
 }
-
-
-
-
-
-
-
-
