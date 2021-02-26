@@ -9,7 +9,7 @@ If that's what you're looking for then this project is for you!
 ## What do you need?
 
 You need to have a <i>**Google account**</i> and _**create a new Google App Script**_ project in your drive. <br>
-You need to create a new folder where the files uploaded by users will be stored and you also need to create a SpreadSheet like the one you find in the repository.
+You need to create a new folder where the files uploaded by users will be stored and you also need to create a SpreadSheet.
 
 ## How it works?
 
