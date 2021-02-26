@@ -1,10 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Form">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Andrea Benà">
+
+    <base target="_top">
+
+    <title>GAS-Form</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <?!= include("Form-page-css") ?>
+
 </head>
+
 <body>
 
+<div class="container">
+    <div class="row justify-content-center pt-4">
+        <a href='<?=linkPersonalPage?>'
+           target="_blank"><img class="col-10 offset-md-1" id="logo_main_page" src='' alt="logo_main_page" border="0"></a>
+    </div>
+</div>
+
+
+<div class="container">
+    <!-- Content here -->
+    <div class="container-fluid py-3 text-center">
+        <h1 class="text-light font-weight-bold text-center display-3">Digital Edition <?= eventYear ?>
+        </h1>
+        <h3 class="text-light font-weight-bold text-center">Form for the collection of contents to be included in
+            the section dedicated
+            to the company on the page of our official website <?= eventYear ?>.</h3>
+        <p class="text-light pt-1">First of all we want to thank you for your participation in <i>your_event</i>
+            (<?= eventDate ?>). <br>
+            We ask you to fill in the form for the collection of contents that we are going to insert in the section dedicated to you.
+            <br>
+            You can view the result (after our publication) by visiting <a target="_blank" href="http://www.youtube.com/">
+                your_personal_page </a>.</p>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <form id="form" action='<?=urlScript?>' method="post" target="_top" onsubmit="return getFiles()">
+
+                <div class="form-row">
+
+                    <!-- First Name -->
+                    <div class="form-group col-md-6">
+                        <label class="text-light font-weight-bold" for="fName">First Name</label><span class="text-danger"> * </span>
+                        <input type="text" class="form-control" id="fName" name="fName" placeholder="Insert your first name" required>
+                    </div>
+
+                    <!-- Last Name -->
+                    <div class="form-group col-md-6">
+                        <label class="text-light font-weight-bold" for="lName">Last Name</label><span class="text-danger"> * </span>
+                        <input type="text" class="form-control" id="lName" name="lName" placeholder="Insert your last name" required>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="form-row justify-content-center">
+                    <div class="form-group col-md-6">
+                        <label class="text-light font-weight-bold" for="email">Email</label><span class="text-danger"> * </span>
+                        <input type="email" class="form-control" id="email" name="email"placeholder="Insert your email address" autocomplete="on" required>
+                        <small id="emailHelp" class="form-text text-muted text-center">We will not share your email with anyone else.</small>
+                    </div>
+                </div>
+
+                <h6 class="text-warning text-center">Check that your email is correct otherwise you will not
+                    receive the automatic confirmation email.</h6>
+
+                <div class="py-1"> </div>
+                <hr style="height:4px; background-color:white; border-radius: 2px; border:none;">
+                <div class="py-2"> </div>
+
+                <!-- Update file -->
+                <div class="mb-3">
+                    <label class="form-label text-light font-weight-bold" for="formFile">Upload the file [max. 5MB]</label><span class="text-danger"> * </span>
+                    <input class="form-control" style="padding: 0.15rem .75rem !important;" type="file" id="file" accept=".jpg, .bmp, .png, .jpeg, .svg, .tiff" required>
+                    <!-- I expect to upload only one file -->
+                </div>
+                <br>
+
+                <div id="progress" class="text-light font-weight-bold text-center">
+                </div>
+
+                <!-- CheckBox -->
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="checkbox" required>
+                    <label class="form-check-label text-light" for="checkbox">
+                        <p style="font-size: 80%;">I have read and accept the <a target="_blank" href="http://www.google.com"><span style="font-weight: 400;">privacy policy</span></a></p>
+                    </label>
+                </div>
+
+                <!-- Recommendations -->
+                <br>
+                <h6 class="text-light text-center">Before proceeding to
+                    submit,<b><i> check that you have correctly filled in all the fields</i></b> of your
+                    interest.
+                    <br>Once submitted,
+                    <b><u>it will no longer be possible to modify the form</u></b>.
+                    <br>If you would like to make any changes, please contact us at our email
+                    <a href="mailto:foo@gmail.com"><span style="font-weight: 400;">foo@gmail.com</span></a>.
+                </h6>
+                <br>
+                <br>
+
+                <!-- Submit btn -->
+                <div id="divSubBtn" class="container text-center">
+                    <button id="submitBtn" class="btn btn-primary btn-lg" type="submit">Submit form</button>
+                </div>
+
+                <input type="hidden" name="goTo" value="greetings">
+            </form>
+            <p class="text-light font-weight-bold" id="log"></p>
+        </div>
+    </div>
+</div>
+
+<?!= include("Form-page-js") ?>
+
 </body>
+
 </html>
