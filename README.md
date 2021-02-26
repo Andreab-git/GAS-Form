@@ -37,7 +37,7 @@ Before deploying, you must enter the values for these variables in **Code.gs**.
 Values | Descriptions
 ------------ | -------------
 URL_SCRIPT | Represents the url that is assigned by Google after deployment.
-LOGO_MAIN_PAGE | Your main logo ID stored in your Drive (remember to share it to everyone)
+LOGO_MAIN_PAGE | Your main logo ID stored in your Drive
 LOGO_GREETINGS_PAGE | This is the logo ID stored in your Drive that appears when the form is submitted successfully
 URL_PERSONAL_PAGE | If you have a personal page, fill in the value with your URL
 SHEET_URL | This is the URL of the SpreadSheet which is located in your Drive and will collect the results of the form. 
