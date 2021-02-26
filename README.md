@@ -45,4 +45,4 @@ DRIVE_FOLDER_ID | This is the folder where the uploaded files will be stored
 EVENT_DATE | Enter the date of the event you are organising
 
 Create a new folder in your Drive where the uploaded file will be stored. <br>
-Create a new SpreadSheet file as like the SpreadSheet file uploaded in my repo.
+Create a new SpreadSheet file as like the [SpreadSheet](SpreadSheet.xlsx) file uploaded in my repo.
