@@ -6,8 +6,9 @@ Would you like anyone, even anonymous people, to be able to fill in your form? <
 
 If that's what you're looking for then this project is for you!
 
-### Drive
+<h3 align="center">Drive</h3>  
 <div align="center">
+
 <a href="https://developers.google.com/apps-script/reference/drive?hl=en">
 <img
 src="https://www.gstatic.com/images/branding/product/2x/drive_96dp.png"
@@ -16,7 +17,7 @@ width="96px"/>
 <br>
 </div>
 
-### Gmail
+<h3 align="center">Gmail</h3>  
 <div align="center">
 <a href="https://developers.google.com/apps-script/reference/gmail">  
 <img 
@@ -26,7 +27,7 @@ width="96px"/>
 </a>
 </div>
 
-### Sheets
+<h3 align="center">Spreadsheet</h3>  
 <div align="center">
 <a href="https://developers.google.com/apps-script/reference/spreadsheet?hl=en">
 <img
