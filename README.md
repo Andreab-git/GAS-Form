@@ -8,29 +8,32 @@ If that's what you're looking for then this project is for you!
 
 ### Drive
 <div align="center">
-<a
-href="https://developers.google.com/apps-script/reference/drive?hl=en"
+<a href="https://developers.google.com/apps-script/reference/drive?hl=en">
+<img
 src="https://www.gstatic.com/images/branding/product/2x/drive_96dp.png"
-width="96px"/></a>
+width="96px"/>
+</a>
 <br>
 </div>
 
 ### Gmail
 <div align="center">
-<img
-href="https://developers.google.com/apps-script/reference/gmail"
+<a href="https://developers.google.com/apps-script/reference/gmail">  
+<img 
 src="https://www.gstatic.com/images/branding/product/2x/gmail_96dp.png"
 align="center"
 width="96px"/>
+</a>
 </div>
 
 ### Sheets
 <div align="center">
+<a href="https://developers.google.com/apps-script/reference/spreadsheet?hl=en">
 <img
-href="https://developers.google.com/apps-script/reference/spreadsheet?hl=en"
 src="https://www.gstatic.com/images/branding/product/2x/sheets_96dp.png"
 align="center"
 width="96px"/>
+</a>
 </div>
 
 <br>
