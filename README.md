@@ -8,10 +8,10 @@ If that's what you're looking for then this project is for you!
 
 ### Drive
 <div align="center">
-<img
+<a
 href="https://developers.google.com/apps-script/reference/drive?hl=en"
 src="https://www.gstatic.com/images/branding/product/2x/drive_96dp.png"
-width="96px"/>
+width="96px"/></a>
 <br>
 </div>
 
